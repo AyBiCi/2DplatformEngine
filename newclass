@@ -1,0 +1,3 @@
+touch cpp/$1.cpp
+touch include/$1.h
+touch tests/$1.cpp
