@@ -5,9 +5,11 @@
 
 class Texture{
     SDL_Texture * texture;
+    
 public:
     Texture(SDL_Texture * texture);
     bool isGood();
+    SDL_Texture* getSDLTexture();
 };
 
 #endif

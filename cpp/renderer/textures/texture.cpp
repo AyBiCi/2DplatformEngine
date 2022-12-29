@@ -7,3 +7,7 @@ Texture::Texture(SDL_Texture * texture){
 bool Texture::isGood(){
     return this->texture != nullptr;
 }
+
+SDL_Texture * Texture::getSDLTexture(){
+    return texture;
+}

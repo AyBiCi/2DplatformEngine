@@ -10,7 +10,10 @@ class TexturesLoader {
     Logger logger;
     SDL_Renderer * renderer;
 public:
+    TexturesLoader();
     TexturesLoader(SDL_Renderer * renderer, std::string assetsPath);
+
+    void init(SDL_Renderer * renderer, std::string assetsPath);
     Texture loadTexture(std::string textureName);
 };
 

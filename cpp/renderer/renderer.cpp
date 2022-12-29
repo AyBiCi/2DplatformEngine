@@ -35,6 +35,8 @@ Renderer::Renderer() : logger("Renderer") {
     logger.info("SDL2 renderer created successfully!");
 
     logger.info("Rendering is now enabled!");
+
+    texturesLoader.init(renderer, "./assets/textures");
 }
 
 bool Renderer::isGood(){
@@ -43,4 +45,23 @@ bool Renderer::isGood(){
 
 SDL_Renderer * Renderer::getSDLRenderer(){
     return renderer;
+}
+
+void Renderer::renderTexture(Texture texture, Transform transform){
+    SDL_RenderCopy(renderer,
+                   texture.getSDLTexture(),
+                   NULL,
+                   NULL);
+}
+
+Texture Renderer::getTexture(std::string textureName){
+    return texturesLoader.loadTexture(textureName);
+}
+
+void Renderer::clean(){
+    SDL_RenderClear(renderer);
+}
+
+void Renderer::present(){
+    SDL_RenderPresent(renderer);
 }

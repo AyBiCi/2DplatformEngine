@@ -1,6 +1,12 @@
 #include "renderer/textures/texturesLoader.h"
 
+TexturesLoader::TexturesLoader() : logger("TextureLoader"){}
+
 TexturesLoader::TexturesLoader(SDL_Renderer * renderer, std::string path) : logger("TextureLoader"){
+    init(renderer, path);
+}
+
+void TexturesLoader::init(SDL_Renderer * renderer, std::string path){
     this->path = path;
     this->renderer = renderer;
 
